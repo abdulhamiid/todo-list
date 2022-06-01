@@ -1,0 +1,110 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  margin-top: 30px;
+}
+
+a {
+  padding: 15px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #000;
+  opacity: 0.6;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+#wrapper {
+  width: 30%;
+  margin: auto;
+  box-shadow: 2px 2px 10px 2px #ccc;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 15px;
+}
+
+li div {
+  display: flex;
+}
+
+li input[type="checkbox"] {
+  margin-right: 15px;
+}
+
+li p {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+li i {
+  padding: 15px 0 15px 15px;
+  opacity: 0.5;
+}
+
+i:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#title i {
+  color: #333;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+form input[type="text"] {
+  border: none;
+  font-size: 15px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+form input[type="text"]::placeholder {
+  font-style: italic;
+  color: #333;
+  opacity: 0.6;
+}
+
+form input:focus {
+  outline: none;
+}
+
+/* submit button */
+#btn {
+  background-color: #fff;
+  border: none;
+}
+
+#btn:hover {
+  cursor: pointer;
+}
+
+#btn i {
+  padding-right: 4px;
+}
