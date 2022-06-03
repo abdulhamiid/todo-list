@@ -34,6 +34,7 @@ export const addItem = (e) => {
     completed: false,
     index: todoList.length + 1
   };
+  document.querySelector('#todo').value = '';
   todoList.push(todoObj);
   localStorage.setItem('data', JSON.stringify(todoList));
     let item = todoList[todoList.length -1]
