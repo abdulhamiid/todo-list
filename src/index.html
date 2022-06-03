@@ -7,19 +7,24 @@
 </head>
 <body>
   <div id="wrapper">
-    <ul id="todo-list">
-      <li id="title">
-        <p>Demo</p>
-        <i class="bi bi-arrow-repeat"></i>
+    <ul>
+      <li>
+        <div id="title">
+          <p>Demo</p>
+          <i class="bi bi-arrow-repeat"></i>
+        </div>
       </li>
       <li>
-        <form action="post">
-          <input type="text" placeholder="Add to your list...">
+        <form action="">
+          <input type="text" placeholder="Add to your list..." id="todo">
           <button type="submit" id="btn"><i class="bi bi-arrow-return-left"></i></button>
         </form>
       </li>
+      <li>
+        <ul id="todo-list"></ul>
+      </li>
+      <li><a href="#">Clear all completed</a></li>
     </ul>
-    <a href="">Clear all completed</a>
   </div>
 </body>
 </html>
