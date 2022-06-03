@@ -2,6 +2,30 @@ let todoList = [];
 const form = document.querySelector('form');
 const list = document.querySelector('#todo-list');
 
+
+export const getDataFromStorage = () => {
+  // getting existing data from localStorage
+  let existingData = JSON.parse(localStorage.getItem('data'));
+  if (existingData == null) existingData = todoList;
+
+  // adding existingData to booksStore
+  todoList = todoList.concat(existingData);
+
+  // displaying data in the ui
+  todoList.forEach((item) => {
+    list.innerHTML += `
+    <li class="list">
+    <div>
+    <input type="checkbox">
+    <p contenteditable="true" class="todo-item" id="${item.index}">${item.description}</p>
+    </div>
+    <i class="bi bi-trash3 hide dot-${item.index}"></i>
+    <i class="bi bi-three-dots-vertical trash-${item.index}"></i>
+    </li>`;
+    // count++
+  });
+}
+
 export const addItem = (e) => {
   e.preventDefault();
   const todo = document.querySelector('#todo').value;
