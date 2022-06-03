@@ -7,7 +7,7 @@
 }
 
 [contenteditable] {
-  outline: 0px solid transparent;
+  outline: 0 solid transparent;
 }
 
 .yellow {
@@ -51,17 +51,17 @@ li {
   text-align: center;
 }
 
-#wrapper > ul li  {
+#wrapper > ul li {
   border-bottom: 1px solid #ccc;
-}
-
-#wrapper > ul ul li:last-child {
-  border-bottom: none;;
 }
 
 #wrapper > ul > li:last-child {
   border: none;
   padding: 15px;
+}
+
+#wrapper > ul ul li:last-child {
+  border-bottom: none;
 }
 
 #title,
@@ -77,6 +77,16 @@ form {
   padding: 15px;
 }
 
+.list i {
+  padding: 15px;
+  opacity: 0.5;
+}
+
+i:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
 form {
   padding-right: 15px;
 }
@@ -84,7 +94,6 @@ form {
 #title i {
   color: #333;
 }
-
 
 .list {
   width: 100%;
@@ -106,7 +115,6 @@ li input[type="checkbox"] {
   margin-right: 15px;
 }
 
-
 .list p {
   font-size: 15px;
   padding: 15px 0;
@@ -114,19 +122,8 @@ li input[type="checkbox"] {
   opacity: 0.8;
 }
 
-.list i {
-  padding: 15px;
-  opacity: 0.5;
-}
-
-i:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
 form input[type="text"] {
   border: none;
-  background-color: none;
   font-size: 15px;
   font-style: italic;
   opacity: 0.8;

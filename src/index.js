@@ -1,8 +1,5 @@
 import './style.css';
-import { getDataFromStorage } from './module/addRemove';
-import { addItem } from './module/addRemove';
-import { handleClick } from './module/addRemove';
-
+import { getDataFromStorage, addItem, handleClick } from './module/addRemove.js';
 
 getDataFromStorage();
 addItem();
