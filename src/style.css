@@ -6,6 +6,19 @@
   box-sizing: border-box;
 }
 
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+.yellow {
+  background-color: rgba(238, 214, 136, 0.5);
+  transition: 0.5s;
+}
+
+.hide {
+  display: none;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #000;
@@ -13,9 +26,8 @@ body {
 }
 
 a {
-  padding: 15px;
+  margin: 15px;
   text-decoration: none;
-  font-size: 15px;
   color: #000;
   opacity: 0.6;
 }
@@ -23,6 +35,10 @@ a {
 a:hover {
   text-decoration: underline;
   opacity: 1;
+}
+
+li {
+  list-style: none;
 }
 
 #wrapper {
@@ -35,31 +51,64 @@ a:hover {
   text-align: center;
 }
 
-li {
-  list-style: none;
+#wrapper > ul li  {
   border-bottom: 1px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
+}
+
+#wrapper > ul ul li:last-child {
+  border-bottom: none;;
+}
+
+#wrapper > ul > li:last-child {
+  border: none;
   padding: 15px;
 }
 
-li div {
+#title,
+form {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding: 15px;
+}
+
+#title i {
+  color: #333;
+}
+
+
+.list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.list div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding-left: 15px;
 }
 
 li input[type="checkbox"] {
   margin-right: 15px;
 }
 
-li p {
+
+.list p {
   font-size: 15px;
+  padding: 15px 0;
+  width: 100%;
   opacity: 0.8;
 }
 
-li i {
-  padding: 15px 0 15px 15px;
+.list i {
+  padding: 15px;
   opacity: 0.5;
 }
 
@@ -68,18 +117,9 @@ i:hover {
   opacity: 1;
 }
 
-#title i {
-  color: #333;
-}
-
-form {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
 form input[type="text"] {
   border: none;
+  background-color: none;
   font-size: 15px;
   font-style: italic;
   opacity: 0.8;
