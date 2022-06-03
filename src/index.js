@@ -1,7 +1,7 @@
 import './style.css';
-import { getDataFromStorage } from '../modules/addRemove';
-import { addItem } from '../modules/addRemove';
-import { handleClick } from '../modules/addRemove';
+import { getDataFromStorage } from './module/addRemove';
+import { addItem } from './module/addRemove';
+import { handleClick } from './module/addRemove';
 
 
 getDataFromStorage();

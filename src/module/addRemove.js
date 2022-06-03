@@ -19,10 +19,9 @@ export const getDataFromStorage = () => {
     <input type="checkbox">
     <p contenteditable="true" class="todo-item" id="${item.index}">${item.description}</p>
     </div>
-    <i class="bi bi-trash3 hide dot-${item.index}"></i>
+    <i class="bi bi-trash3 hide dot-${item.index}" id="${item.index}"></i>
     <i class="bi bi-three-dots-vertical trash-${item.index}"></i>
     </li>`;
-    // count++
   });
 }
 
@@ -54,8 +53,8 @@ export const addItem = (e) => {
 
 export const handleClick = (e) => {
   let id = e.target.id;
-  const dotIcon = document.querySelector(`.dot-${e.target.id}`);
-  const trash = document.querySelector(`.trash-${e.target.id}`);
+  const dotIcon = document.querySelector(`.dot-${id}`);
+  const trash = document.querySelector(`.trash-${id}`);
 
 // set li background color
 
@@ -82,13 +81,25 @@ export const handleClick = (e) => {
       localStorage.setItem('data', JSON.stringify(todoList));
     })
   }
-// console.log(id)
   if(e.target.classList.contains('bi-trash3')){
-    let idx = e.target.id
+    let idx = e.target.id;
     e.target.parentElement.remove();
     todoList.splice(idx - 1, 1);
     todoList = todoList.filter(item => item.index !== idx);
     todoList.map(function(element, i) { element.index = i + 1})
+    list.innerHTML = '';
+    todoList.forEach((item) => {
+      list.innerHTML += `
+      <li class="list">
+      <div>
+      <input type="checkbox">
+      <p contenteditable="true" class="todo-item" id="${item.index}">${item.description}</p>
+      </div>
+      <i class="bi bi-trash3 hide dot-${item.index}" id="${item.index}"></i>
+      <i class="bi bi-three-dots-vertical trash-${item.index}"></i>
+      </li>`;
+    });
+
     localStorage.setItem('data', JSON.stringify(todoList));
   }
 }
