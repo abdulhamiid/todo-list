@@ -13,10 +13,6 @@
 - ES6
 - Webpack
 
-## Live Demo
-
-[Live Demo Link](https://abdulhamiid.github.io/todo-list/)
-
 
 ## Getting Started
 
