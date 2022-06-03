@@ -71,7 +71,14 @@ form {
   justify-content: space-between;
   align-items: center;
   text-align: left;
+}
+
+#title {
   padding: 15px;
+}
+
+form {
+  padding-right: 15px;
 }
 
 #title i {
@@ -123,6 +130,8 @@ form input[type="text"] {
   font-size: 15px;
   font-style: italic;
   opacity: 0.8;
+  width: 80%;
+  padding: 15px 0 15px 15px;
 }
 
 form input[type="text"]::placeholder {
