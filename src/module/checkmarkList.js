@@ -1,6 +1,7 @@
 let todoList = [];
+const clear = document.querySelector('#clear');
 const form = document.querySelector('form');
-const list = document.querySelector('#todo-list');
+export const list = document.querySelector('#todo-list');
 
 export const getDataFromStorage = () => {
   // getting existing data from localStorage
@@ -15,14 +16,16 @@ export const getDataFromStorage = () => {
     list.innerHTML += `
     <li class="list">
     <div>
-    <input type="checkbox">
-    <p contenteditable="true" class="todo-item" id="${item.index}">${item.description}</p>
+    <input type="checkbox" name="task" id="${item.index}">
+    <p contenteditable="true" class="todo-item item-${item.index}" id="${item.index}">${item.description}</p>
     </div>
     <i class="bi bi-trash3 hide dot-${item.index}" id="${item.index}"></i>
     <i class="bi bi-three-dots-vertical trash-${item.index}"></i>
     </li>`;
   });
 };
+
+getDataFromStorage();
 
 export const addItem = (e) => {
   e.preventDefault();
@@ -41,8 +44,8 @@ export const addItem = (e) => {
     list.innerHTML += `
       <li class="list">
       <div>
-      <input type="checkbox">
-      <p contenteditable="true" class="todo-item" id="${item.index}">${item.description}</p>
+      <input type="checkbox" name="task" id="${item.index}">
+      <p contenteditable="true" class="todo-item item-${item.index}" id="${item.index}">${item.description}</p>
       </div>
       <i class="bi bi-trash3 hide dot-${item.index}" id="${item.index}"></i>
       <i class="bi bi-three-dots-vertical trash-${item.index}"></i>
@@ -98,8 +101,8 @@ export const handleClick = (e) => {
       list.innerHTML += `
       <li class="list">
       <div>
-      <input type="checkbox">
-      <p contenteditable="true" class="todo-item" id="${item.index}">${item.description}</p>
+      <input type="checkbox" name="task" id="${item.index}">
+      <p contenteditable="true" class="todo-item item-${item.index}" id="${item.index}">${item.description}</p>
       </div>
       <i class="bi bi-trash3 hide dot-${item.index}" id="${item.index}"></i>
       <i class="bi bi-three-dots-vertical trash-${item.index}"></i>
@@ -113,3 +116,48 @@ export const handleClick = (e) => {
 list.addEventListener('click', handleClick);
 
 form.addEventListener('submit', addItem);
+
+export const filterTodo = () => {
+  todoList = todoList.filter((item) => item.completed === false);
+  todoList.map((element, i) => {
+    element.index = i + 1;
+    return element;
+  });
+
+  // set list to none
+  list.innerHTML = '';
+
+  // update list
+  todoList.forEach((item) => {
+    list.innerHTML += `
+    <li class="list">
+    <div>
+    <input type="checkbox" name="task" id="${item.index}">
+    <p contenteditable="true" class="todo-item item-${item.index}" id="${item.index}">${item.description}</p>
+    </div>
+    <i class="bi bi-trash3 hide dot-${item.index}" id="${item.index}"></i>
+    <i class="bi bi-three-dots-vertical trash-${item.index}"></i>
+    </li>`;
+  });
+
+  localStorage.setItem('data', JSON.stringify(todoList));
+};
+
+clear.addEventListener('click', filterTodo);
+
+const checkboxes = document.querySelectorAll('input[name="task"]');
+
+const setItem = (e) => {
+  const { id } = e.target;
+  const p = document.querySelector(`.item-${id}`);
+  p.classList.toggle('line');
+  if (!todoList[id - 1].completed) {
+    todoList[id - 1].completed = true;
+  } else {
+    todoList[id - 1].completed = false;
+  }
+  localStorage.setItem('data', JSON.stringify(todoList));
+};
+
+checkboxes.forEach((item) => { item.addEventListener('change', setItem); });
+export default setItem;
