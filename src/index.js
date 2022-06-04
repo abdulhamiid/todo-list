@@ -1,6 +1,7 @@
 import './style.css';
-import { getDataFromStorage, addItem, handleClick } from './module/addRemove.js';
+import { setItem } from './module/checkmarkList';
+import { getDataFromStorage, addItem, handleClick, filterTodo } from './module/addRemove.js';
 
-getDataFromStorage();
-addItem();
-handleClick();
+
+
+
