@@ -111,10 +111,6 @@ form {
   padding-left: 15px;
 }
 
-li input[type="checkbox"] {
-  margin-right: 15px;
-}
-
 .list p {
   font-size: 15px;
   padding: 15px 0;
@@ -156,8 +152,11 @@ input[type="checkbox"] {
   padding-right: 4px;
 }
 
-
 .line {
   text-decoration: line-through;
   color: rgb(153, 153, 153);
+}
+
+li input[type="checkbox"] {
+  margin-right: 15px;
 }
