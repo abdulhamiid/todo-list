@@ -1,9 +1,10 @@
-import './style.css';
+import { list, form, clear } from './modules/variables.js';
 import {
-  getDataFromStorage, addItem, handleClick, filterTodo,
-} from './module/checkmarkList.js';
+  existingData, addItem, handleClick, filterItems,
+} from './modules/code.js';
+import './style.css';
 
-addItem();
-handleClick();
-filterTodo();
-getDataFromStorage();
+existingData();
+form.addEventListener('submit', addItem);
+list.addEventListener('click', handleClick);
+clear.addEventListener('click', filterItems);
