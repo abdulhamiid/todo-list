@@ -25,16 +25,16 @@ body {
   margin-top: 30px;
 }
 
-a {
-  margin: 15px;
-  text-decoration: none;
+#clear {
+  margin: 16px;
   color: #000;
   opacity: 0.6;
 }
 
-a:hover {
+#clear:hover {
   text-decoration: underline;
   opacity: 1;
+  cursor: pointer;
 }
 
 li {
