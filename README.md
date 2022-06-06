@@ -24,6 +24,10 @@ To get a local copy up and running follow these simple example steps.
 https://github.com/abdulhamiid/todo-list.git
 ```
 
+### Live Demo 
+
+[Link here](https://abdulhamiid.github.io/todo-list)
+
 ### Deployment
 
 Open the ```index.html``` on your Browser
