@@ -25,7 +25,7 @@ const existingData = () => {
   let existingData = JSON.parse(localStorage.getItem('data'));
   if (existingData == null) existingData = todoList;
 
-  // adding existingData to booksStore
+  // adding existingData to todoList
   todoList = todoList.concat(existingData);
 
   // displaying data in the ui

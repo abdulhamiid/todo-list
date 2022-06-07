@@ -24,9 +24,39 @@ To get a local copy up and running follow these simple example steps.
 https://github.com/abdulhamiid/todo-list.git
 ```
 
+### Live Demo 
+
+[Link here](https://abdulhamiid.github.io/todo-list)
+
+## This project is built with webpack 
+
+- To work on this Repository Locally you need to run some command for basic Installation.
+***NOTE: The minimum supported Node.js version to run webpack 5 is 10.13.0 (LTS)***
+- Click Here for node Installation - [node](https://nodejs.org/en/download/) 
+
+## Basic Setup
+
+### Let's run npx webpack, which will take our script at src/index.js as the entry point, and will generate dist/main.js as the output.
+
+```npx webpack```
+```npx webpack --config webpack.config.js```
+```npm run build```
+
+
+## Setting up HtmlWebpackPlugin
+### First install the plugin and adjust the webpack.config.js file:
+```npm install --save-dev html-webpack-plugin```
+
+### Loading CSS
+```npm install --save-dev style-loader css-loader```
+
+## Development
+### Using webpack-dev-server
+```npm install --save-dev webpack-dev-server```
+
 ### Deployment
 
-Open the ```index.html``` on your Browser
+Run ```npm start```
 
 ## Author
 
