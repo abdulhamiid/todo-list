@@ -11,8 +11,8 @@ const createHtml = (container, obj) => {
   </div>
   <i class="bi bi-trash3 hide dot-${obj.index}" id="${obj.index}"></i>
   <i class="bi bi-three-dots-vertical trash-${obj.index}"></i>
-  </li>`
-}
+  </li>`;
+};
 
 const populate = (arr, path) => {
   // set list to none
