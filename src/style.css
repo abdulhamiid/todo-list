@@ -52,17 +52,17 @@ li {
   text-align: center;
 }
 
-#wrapper > ul li {
-  border-bottom: 1px solid #ccc;
+#todo-list > li {
+  border-top: 1px solid #ccc;
 }
 
 #wrapper > ul > li:last-child {
-  border: none;
+  border-top: 1px solid #ccc;
   padding: 15px;
 }
 
-#wrapper > ul ul li:last-child {
-  border-bottom: none;
+#wrapper > ul > li:first-child {
+  border-bottom: 1px solid #ccc;
 }
 
 #title,
@@ -160,4 +160,10 @@ input[type="checkbox"] {
 
 li input[type="checkbox"] {
   margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+  #wrapper {
+    width: 85%;
+  }
 }
