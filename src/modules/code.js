@@ -2,21 +2,25 @@ import { list, todo } from './variables.js';
 
 let todoList = [];
 
+const createHtml = (container, obj) => {
+  container.innerHTML += `
+  <li class="list">
+  <div>
+  <input type="checkbox" name="task" class="check check-${obj.index}" id="${obj.index}">
+  <p contenteditable="true" class="todo-item item-${obj.index}" id="${obj.index}">${obj.description}</p>
+  </div>
+  <i class="bi bi-trash3 hide dot-${obj.index}" id="${obj.index}"></i>
+  <i class="bi bi-three-dots-vertical trash-${obj.index}"></i>
+  </li>`
+}
+
 const populate = (arr, path) => {
   // set list to none
   path.innerHTML = '';
 
   // update list
   arr.forEach((item) => {
-    path.innerHTML += `
-    <li class="list">
-    <div>
-    <input type="checkbox" name="task" class="check check-${item.index}" id="${item.index}">
-    <p contenteditable="true" class="todo-item item-${item.index}" id="${item.index}">${item.description}</p>
-    </div>
-    <i class="bi bi-trash3 hide dot-${item.index}" id="${item.index}"></i>
-    <i class="bi bi-three-dots-vertical trash-${item.index}"></i>
-    </li>`;
+    createHtml(path, item);
   });
 };
 
@@ -45,15 +49,7 @@ const addItem = (e) => {
     todoList.push(todoObj);
     localStorage.setItem('data', JSON.stringify(todoList));
     const item = todoList[todoList.length - 1];
-    list.innerHTML += `
-      <li class="list">
-      <div>
-      <input type="checkbox" name="task" class="check check-${item.index}" id="${item.index}">
-      <p contenteditable="true" class="todo-item item-${item.index}" id="${item.index}">${item.description}</p>
-      </div>
-      <i class="bi bi-trash3 hide dot-${item.index}" id="${item.index}"></i>
-      <i class="bi bi-three-dots-vertical trash-${item.index}"></i>
-      </li>`;
+    createHtml(list, item);
   }
 };
 
