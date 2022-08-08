@@ -9,10 +9,12 @@
 
 - HTML
 - CSS 
-- JavaScript
-- ES6
+- JavaScript (ES6+)
 - Webpack
 
+### Live Demo 
+
+🔥 [Link](https://abdulhamiid.github.io/todo-list) 🔥
 
 ## Getting Started
 
@@ -21,50 +23,32 @@ To get a local copy up and running follow these simple example steps.
 ### Clone this repository
 
 ```
-https://github.com/abdulhamiid/todo-list.git
+git clone https://github.com/abdulhamiid/todo-list.git
 ```
 
-### Live Demo 
-
-[Link here](https://abdulhamiid.github.io/todo-list)
-
 ## This project is built with webpack 
+### Prerequisites
 
-- To work on this Repository Locally you need to run some command for basic Installation.
-***NOTE: The minimum supported Node.js version to run webpack 5 is 10.13.0 (LTS)***
-- Click Here for node Installation - [node](https://nodejs.org/en/download/) 
+- Node.js
+- npm
 
-## Basic Setup
+- cd into the project directory
+```terminal
+cd todo-list
+```
+- Once you've cloned the repo and are inside the directory, run `npm install` 
+command to get all necessary installations.
 
-### Let's run npx webpack, which will take our script at src/index.js as the entry point, and will generate dist/main.js as the output.
+- **Yep, that's it!** you are now all set and simply run `npm start` to get your clone up and running on the browser.
 
-```npx webpack```
-```npx webpack --config webpack.config.js```
-```npm run build```
-
-
-## Setting up HtmlWebpackPlugin
-### First install the plugin and adjust the webpack.config.js file:
-```npm install --save-dev html-webpack-plugin```
-
-### Loading CSS
-```npm install --save-dev style-loader css-loader```
-
-## Development
-### Using webpack-dev-server
-```npm install --save-dev webpack-dev-server```
-
-### Deployment
-
-Run ```npm start```
 
 ## Author
 
 👤 **Abdulhamid**
 
-- GitHub: [@githubhandle](https://github.com/abdulhamiid)
-- Twitter: [@twitterhandle](https://twitter.com/abdulhamid_adio)
-- LinkedIn: [LinkedIn](https://linkedin.com/)
+- GitHub: [abdulhamiid](https://github.com/abdulhamiid)
+- Twitter: [@abdulhamid_adio](https://twitter.com/abdulhamid_adio)
+- LinkedIn: [Adio Abdulhamid](https://linkedin.com/)
 
 ## 🤝 Contributing
 
@@ -75,6 +59,10 @@ Feel free to check the [issues page](https://github.com/abdulhamiid/todo-list/is
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Thanks to microverse
 
 ## 📝 License
 
