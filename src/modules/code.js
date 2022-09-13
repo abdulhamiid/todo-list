@@ -4,7 +4,7 @@ let todoList = [];
 
 const createHtml = (container, obj) => {
   container.innerHTML += `
-  <li class="list">
+  <li class="list flex">
   <div>
   <input type="checkbox" name="task" class="check check-${obj.index}" id="${obj.index}">
   <p contenteditable="true" class="todo-item item-${obj.index}" id="${obj.index}">${obj.description}</p>
