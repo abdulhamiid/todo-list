@@ -6,25 +6,32 @@
   <title>Todo List</title>
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
-  <div id="wrapper">
-    <ul>
-      <li>
-        <div id="title">
+  <main id="wrapper" class="flex flex-column">
+    <div>
+      <section>
+        <div id="title" class="flex">
           <p>Add new Todo</p>
           <i class="bi bi-arrow-repeat"></i>
         </div>
-      </li>
-      <li>
-        <form action="post">
+      </section>
+  
+      <section>
+        <form action="post" class="form flex">
           <input type="text" placeholder="Add to your list..." id="todo">
-          <button type="submit" id="btn"><i class="bi bi-arrow-return-left"></i></button>
+          <button type="submit" id="btn">
+            <i class="bi bi-arrow-return-left"></i>
+          </button>
         </form>
-      </li>
-      <li>
+      </section>
+  
+      <section>
         <ul id="todo-list"></ul>
-      </li>
-      <li><small id="clear">Clear all completed</small></li>
-    </ul>
-  </div>
+      </section>
+  
+      <section>
+        <small id="clear">Clear all completed</small></li>
+      </section>
+    </div>
+  </main>
 </body>
 </html>
