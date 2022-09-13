@@ -17,10 +17,6 @@ h1 {
   font-size: 20px;
 }
 
-header {
-  border-bottom: 1px solid #ccc;
-}
-
 li {
   list-style: none;
 }
@@ -62,6 +58,20 @@ li {
   cursor: pointer;
 }
 
+header {
+  border-bottom: 1px solid #ccc;
+}
+
+main > div {
+  padding: 15px;
+}
+
+#todo-list > li,
+main > div {
+  width: 100%;
+  border-top: 1px solid #ccc;
+}
+
 #wrapper {
   width: 30%;
   margin: auto;
@@ -78,12 +88,6 @@ li {
 
 #todo-list {
   width: 100%;
-}
-
-#todo-list > li,
-main > div {
-  width: 100%;
-  border-top: 1px solid #ccc;
 }
 
 #title,
@@ -164,10 +168,6 @@ input[type="checkbox"] {
 
 li input[type="checkbox"] {
   margin-right: 15px;
-}
-
-main > div {
-  padding: 15px;
 }
 
 @media (max-width: 768px) {
