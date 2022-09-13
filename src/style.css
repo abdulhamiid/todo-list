@@ -5,7 +5,7 @@
   margin: 0;
   box-sizing: border-box;
 }
- 
+
 /* global styling */
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -61,6 +61,15 @@ li {
   border-radius: 3px;
 }
 
+/* todo list item */
+.list > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding-left: 15px;
+}
+
 #wrapper > div {
   width: 100%;
 }
@@ -106,14 +115,6 @@ form {
 
 #title i {
   color: #333;
-}
-
-.list div {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  text-align: left;
-  padding-left: 15px;
 }
 
 .list p {
