@@ -6,25 +6,32 @@
   <title>Todo List</title>
 </head>
 <body>
-  <div id="wrapper">
-    <ul>
-      <li>
-        <div id="title">
+  <main id="wrapper" class="flex flex-column">
+    <div>
+      <div>
+        <div id="title" class="flex">
           <p>Add new Todo</p>
           <i class="bi bi-arrow-repeat"></i>
         </div>
-      </li>
-      <li>
-        <form action="post">
+      </div>
+  
+      <div>
+        <form action="post" class="form flex">
           <input type="text" placeholder="Add to your list..." id="todo">
-          <button type="submit" id="btn"><i class="bi bi-arrow-return-left"></i></button>
+          <button type="submit" id="btn">
+            <i class="bi bi-arrow-return-left"></i>
+          </button>
         </form>
-      </li>
-      <li>
+      </div>
+  
+      <div>
         <ul id="todo-list"></ul>
-      </li>
-      <li><small id="clear">Clear all completed</small></li>
-    </ul>
-  </div>
+      </div>
+  
+      <div>
+        <small id="clear">Clear all completed</small></li>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
