@@ -13,6 +13,14 @@ body {
   margin-top: 30px;
 }
 
+h1 {
+  font-size: 20px;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+}
+
 li {
   list-style: none;
 }
@@ -68,21 +76,14 @@ li {
   padding-left: 15px;
 }
 
-#wrapper > div {
+#todo-list {
   width: 100%;
 }
 
-#todo-list > li {
+#todo-list > li,
+main > div {
+  width: 100%;
   border-top: 1px solid #ccc;
-}
-
-#wrapper > div > div:last-child {
-  border-top: 1px solid #ccc;
-  padding: 15px;
-}
-
-#wrapper > div > div:first-child {
-  border-bottom: 1px solid #ccc;
 }
 
 #title,
@@ -163,6 +164,10 @@ input[type="checkbox"] {
 
 li input[type="checkbox"] {
   margin-right: 15px;
+}
+
+main > div {
+  padding: 15px;
 }
 
 @media (max-width: 768px) {

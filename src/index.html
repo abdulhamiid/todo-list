@@ -7,30 +7,22 @@
 </head>
 <body>
   <main id="wrapper" class="flex flex-column">
+    <header id="title" class="flex">
+      <h1>Add new Todo</h1>
+      <i class="bi bi-arrow-repeat"></i>
+    </header>
+
+    <form action="post" class="form flex">
+      <input type="text" placeholder="Add to your list..." id="todo">
+      <button type="submit" id="btn">
+        <i class="bi bi-arrow-return-left"></i>
+      </button>
+    </form>
+
+    <ul id="todo-list"></ul>
+  
     <div>
-      <div>
-        <div id="title" class="flex">
-          <p>Add new Todo</p>
-          <i class="bi bi-arrow-repeat"></i>
-        </div>
-      </div>
-  
-      <div>
-        <form action="post" class="form flex">
-          <input type="text" placeholder="Add to your list..." id="todo">
-          <button type="submit" id="btn">
-            <i class="bi bi-arrow-return-left"></i>
-          </button>
-        </form>
-      </div>
-  
-      <div>
-        <ul id="todo-list"></ul>
-      </div>
-  
-      <div>
-        <small id="clear">Clear all completed</small></li>
-      </div>
+      <small id="clear">Clear all completed</small></li>
     </div>
   </main>
 </body>
