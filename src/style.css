@@ -13,6 +13,10 @@ body {
   margin-top: 30px;
 }
 
+h1 {
+  font-size: 20px;
+}
+
 li {
   list-style: none;
 }
@@ -54,6 +58,20 @@ li {
   cursor: pointer;
 }
 
+header {
+  border-bottom: 1px solid #ccc;
+}
+
+main > div {
+  padding: 15px;
+}
+
+#todo-list > li,
+main > div {
+  width: 100%;
+  border-top: 1px solid #ccc;
+}
+
 #wrapper {
   width: 30%;
   margin: auto;
@@ -64,27 +82,12 @@ li {
 /* todo list item */
 .list > div {
   width: 100%;
-  display: flex;
-  align-items: center;
   text-align: left;
   padding-left: 15px;
 }
 
-#wrapper > div {
+#todo-list {
   width: 100%;
-}
-
-#todo-list > li {
-  border-top: 1px solid #ccc;
-}
-
-#wrapper > div > div:last-child {
-  border-top: 1px solid #ccc;
-  padding: 15px;
-}
-
-#wrapper > div > div:first-child {
-  border-bottom: 1px solid #ccc;
 }
 
 #title,

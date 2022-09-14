@@ -48,7 +48,7 @@ command to get all necessary installations.
 
 - GitHub: [abdulhamiid](https://github.com/abdulhamiid)
 - Twitter: [@abdulhamid_adio](https://twitter.com/abdulhamid_adio)
-- LinkedIn: [Adio Abdulhamid](www.linkedin.com/in/abdulhamid-adio)
+- LinkedIn: [Adio Abdulhamid](https://linkedin.com/in/abdulhamid-adio)
 
 ## 🤝 Contributing
 
