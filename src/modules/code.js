@@ -15,24 +15,19 @@ const createHtml = (container, obj) => {
 };
 
 const populate = (arr, path) => {
-  // set list to none
   path.innerHTML = '';
 
-  // update list
   arr.forEach((item) => {
     createHtml(path, item);
   });
 };
 
 const existingData = () => {
-  // getting existing data from localStorage
   let existingData = JSON.parse(localStorage.getItem('data'));
   if (existingData == null) existingData = todoList;
 
-  // adding existingData to todoList
   todoList = todoList.concat(existingData);
 
-  // displaying data in the ui
   populate(todoList, list);
 };
 
@@ -58,17 +53,14 @@ const handleClick = (e) => {
   const dotIcon = document.querySelector(`.dot-${id}`);
   const trash = document.querySelector(`.trash-${id}`);
 
-  // set li background color
   document.querySelectorAll('.list').forEach((list) => {
     list.classList.remove('yellow');
   });
 
-  // toogle the trash icon
   document.querySelectorAll('.bi-trash3').forEach((list) => {
     list.classList.add('hide');
   });
 
-  // toogle the dot icon
   document.querySelectorAll('.bi-three-dots-vertical').forEach((list) => {
     list.classList.remove('hide');
   });
@@ -83,7 +75,6 @@ const handleClick = (e) => {
     });
   }
 
-  // item deletion event
   if (e.target.classList.contains('bi-trash3')) {
     const idx = e.target.id;
     e.target.parentElement.remove();
@@ -94,15 +85,12 @@ const handleClick = (e) => {
       return element;
     });
 
-    // set list to none
     list.innerHTML = '';
 
-    // update list
     populate(todoList, list);
     localStorage.setItem('data', JSON.stringify(todoList));
   }
 
-  // checkbox event
   if (e.target.classList.contains('check')) {
     const { id } = e.target;
     const p = document.querySelector(`.item-${id}`);
@@ -119,7 +107,6 @@ const handleClick = (e) => {
   }
 };
 
-// filter all completed items in the list
 const filterItems = () => {
   todoList = todoList.filter((item) => item.completed === false);
   todoList.map((element, i) => {
@@ -127,10 +114,8 @@ const filterItems = () => {
     return element;
   });
 
-  // set list to none
   list.innerHTML = '';
 
-  // update list
   populate(todoList, list);
   localStorage.setItem('data', JSON.stringify(todoList));
 };
