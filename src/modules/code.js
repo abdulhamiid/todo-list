@@ -1,16 +1,21 @@
 import { list, todo } from './variables.js';
 
+const todos = document.querySelectorAll('.todo-item');
+todos.forEach((todo) => {
+  todo.setAttribute('spellcheck', false);
+});
+
 let todoList = [];
 
 const createHtml = (container, obj) => {
   container.innerHTML += `
-  <li class="list flex">
-  <div class="flex">
+  <li class="list">
+  <div class="">
   <input type="checkbox" name="task" class="check check-${obj.index}" id="${obj.index}">
   <p contenteditable="true" class="todo-item item-${obj.index}" id="${obj.index}">${obj.description}</p>
-  </div>
-  <i class="bi bi-trash3 hide dot-${obj.index}" id="${obj.index}"></i>
+  <i class="fa-regular fa-trash-can hide dot-${obj.index}" id="${obj.index}"></i>
   <i class="bi bi-three-dots-vertical trash-${obj.index}"></i>
+  </div>
   </li>`;
 };
 
@@ -57,7 +62,7 @@ const handleClick = (e) => {
     list.classList.remove('yellow');
   });
 
-  document.querySelectorAll('.bi-trash3').forEach((list) => {
+  document.querySelectorAll('.fa-trash-can').forEach((list) => {
     list.classList.add('hide');
   });
 
@@ -73,9 +78,14 @@ const handleClick = (e) => {
       todoList[e.target.id - 1].description = e.target.textContent;
       localStorage.setItem('data', JSON.stringify(todoList));
     });
+  } else if (!e.target.classList.contains('todo-item')) {
+    const list = document.querySelectorAll('.list');
+    list.forEach((list) => {
+      list.classList.remove('yellow');
+    });
   }
 
-  if (e.target.classList.contains('bi-trash3')) {
+  if (e.target.classList.contains('fa-trash-can')) {
     const idx = e.target.id;
     e.target.parentElement.remove();
     todoList.splice(idx - 1, 1);

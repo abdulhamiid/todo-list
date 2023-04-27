@@ -6,15 +6,16 @@
   box-sizing: border-box;
 }
 
-/* global styling */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #000;
-  margin-top: 30px;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 30px;
+  height: 100vh;
+  background-color: #f4f5f7;
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 li {
@@ -26,7 +27,7 @@ li {
 }
 
 .yellow {
-  background-color: rgba(238, 214, 136, 0.5);
+  background-color: #fffdc2;
   transition: 0.5s;
 }
 
@@ -45,49 +46,87 @@ li {
   flex-direction: column;
 }
 
-#clear {
-  margin: 16px;
-  font-size: 16px;
-  color: #000;
-  opacity: 0.6;
-}
-
-#clear:hover {
-  text-decoration: underline;
-  opacity: 1;
-  cursor: pointer;
+.material-icons {
+  color: #a0a09f;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
 }
 
 header {
-  border-bottom: 1px solid #ccc;
-}
-
-main > div {
-  padding: 15px;
+  border-bottom: 1px solid #bfbfbe;
 }
 
 #todo-list > li,
-main > div {
+.clear-field {
   width: 100%;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #bfbfbe;
 }
 
 #wrapper {
-  width: 30%;
+  width: 85%;
   margin: auto;
   box-shadow: 2px 2px 10px 2px #ccc;
+  background-color: #fff;
   border-radius: 3px;
 }
 
-/* todo list item */
 .list > div {
   width: 100%;
   text-align: left;
   padding-left: 15px;
+  display: flex;
 }
 
 #todo-list {
   width: 100%;
+}
+
+.list i {
+  padding: 15px;
+  opacity: 0.5;
+}
+
+i:hover {
+  opacity: 1;
+}
+
+form {
+  padding-right: 15px;
+}
+
+.list p {
+  font-size: 15px;
+  padding: 15px 0;
+  width: 100%;
+  opacity: 0.8;
+}
+
+form input[type="text"] {
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  font-size: 15px;
+  font-style: italic;
+  width: 80%;
+  padding: 15px 0 15px 15px;
+}
+
+form input[type="text"]::placeholder {
+  font-style: italic;
+  color: #333;
+  opacity: 0.9;
+}
+
+form input:focus {
+  outline: none;
 }
 
 #title,
@@ -102,58 +141,39 @@ main > div {
   padding: 15px;
 }
 
-.list i {
-  padding: 15px;
-  opacity: 0.5;
-}
-
-i:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-form {
-  padding-right: 15px;
-}
-
-#title i {
-  color: #333;
-}
-
-.list p {
-  font-size: 15px;
-  padding: 15px 0;
-  width: 100%;
-  opacity: 0.8;
-}
-
-form input[type="text"] {
-  border: none;
-  font-size: 15px;
-  font-style: italic;
-  opacity: 0.8;
-  width: 80%;
-  padding: 15px 0 15px 15px;
-}
-
-form input[type="text"]::placeholder {
-  font-style: italic;
-  color: #333;
-  opacity: 0.6;
-}
-
-form input:focus {
-  outline: none;
-}
-
 /* submit button */
 #btn {
-  background-color: #fff;
   border: none;
+  background-color: #fff;
 }
 
 #btn:hover,
+i:hover,
 input[type="checkbox"] {
+  cursor: pointer;
+}
+
+#title i {
+  color: #a0a09f;
+}
+
+.clear-field {
+  background-color: #f5f5f4;
+  padding: 15px;
+}
+
+.clear-field button {
+  background: none;
+  width: 100%;
+  height: 100%;
+  color: #858584;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  font-size: 15px;
+}
+
+.clear-field button:hover {
+  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -163,15 +183,57 @@ input[type="checkbox"] {
 
 .line {
   text-decoration: line-through;
-  color: rgb(153, 153, 153);
+  color: #80807f;
 }
 
 li input[type="checkbox"] {
-  margin-right: 15px;
+  appearance: none;
+  background: none;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid #858584;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: flex;
+  align-self: center;
+  margin-right: 10px;
+  place-content: center;
 }
 
-@media (max-width: 768px) {
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color: #3377c6;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked {
+  border: none;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+@media (min-width: 481px) {
+  body {
+    padding-top: 80px;
+  }
+
   #wrapper {
-    width: 85%;
+    width: 70%;
+  }
+}
+
+@media (min-width: 768px) {
+  #wrapper {
+    width: 35%;
   }
 }
