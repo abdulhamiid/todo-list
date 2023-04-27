@@ -3,26 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://kit.fontawesome.com/f0518f2c15.js" crossorigin="anonymous"></script>
   <title>Todo List</title>
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
   <main id="wrapper" class="flex flex-column">
     <header id="title" class="flex">
-      <h1>Add new Todo</h1>
-      <i class="bi bi-arrow-repeat"></i>
+      <h1>Today's To Do</h1>
+      <i class="fa-solid fa-rotate fa-flip-vertical"></i>
     </header>
 
     <form action="post" class="form flex">
       <input type="text" placeholder="Add to your list..." id="todo">
-      <button type="submit" id="btn">
-        <i class="bi bi-arrow-return-left"></i>
+      <button class="icon-button refresh-button opacity-2" type="submit" id="btn">
+        <span class="material-icons">keyboard_return</span>
       </button>
     </form>
 
     <ul id="todo-list"></ul>
   
-    <div>
-      <small id="clear">Clear all completed</small>
+    <div class="clear-field">
+      <button type="button" class="filter">Clear all completed</button>
     </div>
   </main>
 </body>
