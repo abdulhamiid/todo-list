@@ -122,7 +122,7 @@ form input[type="text"] {
 form input[type="text"]::placeholder {
   font-style: italic;
   color: #333;
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 form input:focus {
