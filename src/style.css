@@ -47,7 +47,6 @@ li {
 }
 
 .material-icons {
-  font-family: 'Material Icons';
   color: #a0a09f;
   font-weight: normal;
   font-style: normal;
@@ -65,7 +64,6 @@ li {
 header {
   border-bottom: 1px solid #bfbfbe;
 }
-
 
 #todo-list > li,
 .clear-field {
@@ -90,23 +88,6 @@ header {
 
 #todo-list {
   width: 100%;
-}
-
-#title,
-.form,
-.list {
-  width: 100%;
-  justify-content: space-between;
-  text-align: left;
-}
-
-#title {
-  padding: 15px;
-
-}
-
-#title i {
-  color: #a0a09f;
 }
 
 .list i {
@@ -148,6 +129,18 @@ form input:focus {
   outline: none;
 }
 
+#title,
+.form,
+.list {
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+}
+
+#title {
+  padding: 15px;
+}
+
 /* submit button */
 #btn {
   border: none;
@@ -158,6 +151,10 @@ form input:focus {
 i:hover,
 input[type="checkbox"] {
   cursor: pointer;
+}
+
+#title i {
+  color: #a0a09f;
 }
 
 .clear-field {
@@ -180,7 +177,6 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-
 #btn i {
   padding-right: 4px;
 }
@@ -197,7 +193,7 @@ li input[type="checkbox"] {
   color: currentColor;
   width: 1.15em;
   height: 1.15em;
-  border: 0.15em solid #858584;;
+  border: 0.15em solid #858584;
   border-radius: 0.15em;
   transform: translateY(-0.075em);
   display: flex;

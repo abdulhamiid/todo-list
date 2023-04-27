@@ -1,8 +1,9 @@
 import { list, todo } from './variables.js';
-const todos = document.querySelectorAll('.todo-item')
-todos.forEach(todo => {
+
+const todos = document.querySelectorAll('.todo-item');
+todos.forEach((todo) => {
   todo.setAttribute('spellcheck', false);
-})
+});
 
 let todoList = [];
 
@@ -77,11 +78,11 @@ const handleClick = (e) => {
       todoList[e.target.id - 1].description = e.target.textContent;
       localStorage.setItem('data', JSON.stringify(todoList));
     });
-  } else if(!e.target.classList.contains('todo-item')){
-    const list = document.querySelectorAll('.list')
-    list.forEach(list => {
+  } else if (!e.target.classList.contains('todo-item')) {
+    const list = document.querySelectorAll('.list');
+    list.forEach((list) => {
       list.classList.remove('yellow');
-    })
+    });
   }
 
   if (e.target.classList.contains('fa-trash-can')) {
