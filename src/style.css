@@ -6,15 +6,16 @@
   box-sizing: border-box;
 }
 
-/* global styling */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #000;
-  margin-top: 30px;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 30px;
+  height: 100vh;
+  background-color: #f4f5f7;
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 li {
@@ -26,7 +27,7 @@ li {
 }
 
 .yellow {
-  background-color: rgba(238, 214, 136, 0.5);
+  background-color: #fffdc2;
   transition: 0.5s;
 }
 
@@ -45,45 +46,46 @@ li {
   flex-direction: column;
 }
 
-#clear {
-  margin: 16px;
-  font-size: 16px;
-  color: #000;
-  opacity: 0.6;
-}
-
-#clear:hover {
-  text-decoration: underline;
-  opacity: 1;
-  cursor: pointer;
+.material-icons {
+  font-family: 'Material Icons';
+  color: #a0a09f;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #bfbfbe;
 }
 
-main > div {
-  padding: 15px;
-}
 
 #todo-list > li,
-main > div {
+.clear-field {
   width: 100%;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #bfbfbe;
 }
 
 #wrapper {
-  width: 30%;
+  width: 85%;
   margin: auto;
   box-shadow: 2px 2px 10px 2px #ccc;
+  background-color: #fff;
   border-radius: 3px;
 }
 
-/* todo list item */
 .list > div {
   width: 100%;
   text-align: left;
   padding-left: 15px;
+  display: flex;
 }
 
 #todo-list {
@@ -100,6 +102,11 @@ main > div {
 
 #title {
   padding: 15px;
+
+}
+
+#title i {
+  color: #a0a09f;
 }
 
 .list i {
@@ -108,16 +115,11 @@ main > div {
 }
 
 i:hover {
-  cursor: pointer;
   opacity: 1;
 }
 
 form {
   padding-right: 15px;
-}
-
-#title i {
-  color: #333;
 }
 
 .list p {
@@ -128,10 +130,10 @@ form {
 }
 
 form input[type="text"] {
+  font-family: 'Open Sans', sans-serif;
   border: none;
   font-size: 15px;
   font-style: italic;
-  opacity: 0.8;
   width: 80%;
   padding: 15px 0 15px 15px;
 }
@@ -148,14 +150,36 @@ form input:focus {
 
 /* submit button */
 #btn {
-  background-color: #fff;
   border: none;
+  background-color: #fff;
 }
 
 #btn:hover,
+i:hover,
 input[type="checkbox"] {
   cursor: pointer;
 }
+
+.clear-field {
+  background-color: #f5f5f4;
+  padding: 15px;
+}
+
+.clear-field button {
+  background: none;
+  width: 100%;
+  height: 100%;
+  color: #858584;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  font-size: 15px;
+}
+
+.clear-field button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 
 #btn i {
   padding-right: 4px;
@@ -170,8 +194,18 @@ li input[type="checkbox"] {
   margin-right: 15px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 481px) {
+  body {
+    padding-top: 80px;
+  }
+
   #wrapper {
-    width: 85%;
+    width: 70%;
+  }
+}
+
+@media (min-width: 768px) {
+  #wrapper {
+    width: 35%;
   }
 }
